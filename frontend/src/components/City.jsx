@@ -17,12 +17,13 @@ const formatDate = (date) => {
   }).format(d);
 };
 
+function City() {
+  const { id } = useParams();
+  const { getCity, currentCity, isLoading } = useCities();
 
   useEffect(() => {
-  if (id) getCity(id);
-}, [id, getCity]);
-
-
+    if (id) getCity(id);
+  }, [id, getCity]); // include getCity to satisfy exhaustive-deps [web:252][web:265]
 
   if (isLoading || !currentCity) return <Spinner />;
 
@@ -72,5 +73,3 @@ const formatDate = (date) => {
 }
 
 export default City;
-
-
