@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 // Use Express API base (adjust for prod via env if needed)
-const BASE_URL = "http://localhost:5000/api";
+const BASE_URL = "https://geoguidetest-backend.onrender.com/api";
+
 const CitiesContext = createContext();
 function CitiesProvider({ children }) {
   const [cities, setCities] = useState([]);
@@ -118,3 +119,4 @@ function useCities() {
 }
 
 export { CitiesProvider, useCities };
+
