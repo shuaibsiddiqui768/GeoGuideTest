@@ -17,9 +17,10 @@ const formatDate = (date) => {
   }).format(d);
 };
 
-function City() {
-  const { id } = useParams();
-  const { getCity, currentCity, isLoading } = useCities();
+
+  useEffect(() => {
+  if (id) getCity(id);
+}, [id, getCity]);
 
   useEffect(() => {
     if (id) getCity(id);
@@ -73,3 +74,4 @@ function City() {
 }
 
 export default City;
+
