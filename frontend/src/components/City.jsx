@@ -22,9 +22,7 @@ const formatDate = (date) => {
   if (id) getCity(id);
 }, [id, getCity]);
 
-  useEffect(() => {
-    if (id) getCity(id);
-  }, [id]);
+
 
   if (isLoading || !currentCity) return <Spinner />;
 
@@ -74,4 +72,5 @@ const formatDate = (date) => {
 }
 
 export default City;
+
 
